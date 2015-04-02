@@ -1,0 +1,226 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  tools:context=".SplitBill"
+    android:id="@+id/layout">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:background="#337147"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/finalBillText"
+            android:id="@+id/tvFinalBill"
+            android:textColor="#FFFFFF"
+            android:textSize="35dp"
+            android:layout_below="@+id/tvFinalBillAmount"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$0.00"
+            android:id="@+id/tvFinalBillAmount"
+            android:textColor="#ffffffff"
+            android:textSize="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        android:id="@+id/relativeLayout2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="25dp"
+        android:paddingTop="5dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etBill"
+            android:hint="$0.00"
+            android:inputType="numberDecimal"
+            android:textColor="#337147"
+            android:textSize="35dp"
+            android:maxLength="9"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/bill_text"
+            android:id="@+id/tvBill"
+            android:layout_below="@+id/etBill"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/tipText"
+            android:id="@+id/tvTip"
+            android:layout_alignTop="@+id/tvPartySize"
+            android:layout_toRightOf="@+id/btnMinTip"
+            android:layout_toEndOf="@+id/btnMinTip"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="#000000" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnPlusTip"
+            android:background="@drawable/plusbutton"
+            android:layout_alignTop="@+id/btnMinTip"
+            android:layout_toRightOf="@+id/tvTip"
+            android:layout_toEndOf="@+id/tvTip" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnMinTip"
+            android:background="@drawable/minusbutton"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/calcTipText"
+            android:id="@+id/tvCalculatedTip"
+            android:layout_alignTop="@+id/tvSplit"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="15"
+            android:id="@+id/tvTipAmount"
+            android:textColor="#337147"
+            android:textSize="35dp"
+            android:layout_above="@+id/btnPlusTip"
+            android:layout_toRightOf="@+id/btnMinTip"
+            android:layout_toEndOf="@+id/btnMinTip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$0.00"
+            android:id="@+id/tvCalcTipAmount"
+            android:textColor="#337147"
+            android:textSize="35dp"
+            android:layout_above="@+id/tvCalculatedTip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/splitAmountText"
+            android:id="@+id/tvSplit"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$0.00"
+            android:id="@+id/tvSplitAmount"
+            android:textColor="#337147"
+            android:textSize="35dp"
+            android:layout_above="@+id/tvSplit"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnMinParty"
+            android:background="@drawable/minusbutton"
+            android:layout_alignTop="@+id/btnPlusTip"
+            android:layout_toLeftOf="@+id/tvPartySize"
+            android:layout_toStartOf="@+id/tvPartySize" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnPlusParty"
+            android:background="@drawable/plusbutton"
+            android:layout_alignTop="@+id/btnMinParty"
+            android:layout_alignRight="@+id/tvSplitAmount"
+            android:layout_alignEnd="@+id/tvSplitAmount" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="1"
+            android:id="@+id/tvPartySizeAmount"
+            android:textSize="35dp"
+            android:textColor="#337147"
+            android:layout_above="@+id/tvPartySize"
+            android:layout_alignRight="@+id/tvPartySize"
+            android:layout_alignEnd="@+id/tvPartySize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/partySizeText"
+            android:id="@+id/tvPartySize"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btnPlusParty"
+            android:layout_toStartOf="@+id/btnPlusParty"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="%"
+            android:id="@+id/tvPercentSign"
+            android:textSize="35dp"
+            android:textColor="#337147"
+            android:paddingLeft="5dp"
+            android:layout_alignTop="@+id/tvTipAmount"
+            android:layout_toRightOf="@+id/tvTipAmount"
+            android:layout_toEndOf="@+id/tvTipAmount" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

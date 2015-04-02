@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Jeffrey\'s Tip Calculator</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="bill_text">Current Bill</string>
+    <string name="partySizeText">Party</string>
+    <string name="splitAmountText">Split Amount</string>
+    <string name="calcTipText">Calculated Tip</string>
+    <string name="tipText">Tip</string>
+    <string name="finalBillText">Final Bill</string>
+
+
+
+</resources>
