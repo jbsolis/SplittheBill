@@ -1,5 +1,6 @@
 package io.solistenapps.splitthebill;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -101,48 +102,43 @@ public class SplitBill extends ActionBarActivity {
     //Listens for updated in initial bill value
     private TextWatcher initialBillListener = new TextWatcher() {
 
+        String current = "";
+
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
         }
 
-        private String current = "";
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            //Formats input as currency
-            if(!s.toString().equals(current)){
-                etBillAmount.removeTextChangedListener(this);
+                if(!s.toString().equals(current)){
 
-                String cleanString = s.toString().replaceAll("[$,.]", "");
+                    etBillAmount.removeTextChangedListener(this);
 
-                bill = Double.parseDouble(cleanString);
-                String formatted = NumberFormat.getCurrencyInstance().format((bill/100));
+                    String cleanString = s.toString().replaceAll("[$,.]", "");
 
-                current = formatted;
-                etBillAmount.setText(formatted);
-                etBillAmount.setSelection(formatted.length());
+                    try{
+                        bill = Double.parseDouble(cleanString);
+                    } catch(NumberFormatException e){
+                        bill = 0.0;
+                    }
 
-                etBillAmount.addTextChangedListener(this);
+                    String formatted = NumberFormat.getCurrencyInstance().format((bill/100));
 
-            }
+                    current = formatted;
+                    etBillAmount.setText(formatted);
+                    etBillAmount.setSelection(formatted.length());
 
+                    etBillAmount.addTextChangedListener(this);
 
-//            try{
-//
-//                //Change string value to double
-//                bill = Double.parseDouble(s.toString());
-//
-//            } catch(NumberFormatException e){
-//
-//                bill = 0.0;
-//
-//            }
+                    updateFinalSplitBill();
 
-            updateFinalSplitBill();
+                }
 
         }
+
+
 
         @Override
         public void afterTextChanged(Editable s) {
